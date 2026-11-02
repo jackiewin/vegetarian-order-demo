@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>手機防詐騙｜20題真假訊息互動問答</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#182433;background:#f1f5fa}*{box-sizing:border-box}body{margin:0}main{max-width:850px;margin:auto;padding:24px 16px 58px}.hero{background:linear-gradient(125deg,#13375c,#145b73);color:#fff;border-radius:22px;padding:30px 26px;box-shadow:0 9px 28px #16385320}h1{font-size:clamp(26px,4.5vw,38px);margin:0 0 10px}.subtitle{line-height:1.7;font-size:18px;margin:0}.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:22px 0}.btn{font:inherit;cursor:pointer;padding:12px 20px;border-radius:12px;border:2px solid #24577a;font-size:18px;font-weight:750;background:#fff;color:#174366;min-height:48px}.btn.primary{background:#174e74;color:#fff}.btn:focus-visible{outline:4px solid #f8c65a;outline-offset:2px}.btn[disabled]{cursor:not-allowed;opacity:.4}.active{box-shadow:0 0 0 3px #f3c750 inset}.stats{margin-left:auto;font-size:17px;color:#41566c}.card{border:1px solid #d7e1ec;background:#fff;border-radius:20px;padding:clamp(20px,4vw,34px);margin-bottom:18px;box-shadow:0 5px 22px #223d5c0b}.qhead{display:flex;align-items:center;justify-content:space-between;gap:15px;color:#57718b;font-size:17px;font-weight:700}.category{background:#e8f1fc;color:#164e7d;padding:6px 10px;border-radius:8px}.question{font-size:clamp(22px,3.8vw,28px);line-height:1.65;font-weight:780;white-space:pre-wrap;margin:20px 0 24px}.answer{margin-top:20px;padding:20px;background:#edf7f2;border:1px solid #b6d9c9;border-radius:14px;line-height:1.8;font-size:19px}.answer.bad{background:#fff3f0;border-color:#f1cbc2}.answer .result{font-size:23px;font-weight:900;margin-bottom:5px}.answer p{margin:8px 0}.answer .action{border-top:1px solid #d1d8da;padding-top:10px;margin-top:12px}.nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.small-note{line-height:1.7;color:#5a6980;font-size:15px}.hidden{display:none!important}.foot{margin:25px 5px;color:#4d6274;line-height:1.75}.progress{height:9px;background:#dbe7f1;border-radius:20px;overflow:hidden;margin-top:14px}.progress-bar{height:100%;background:#4ac0ac;transition:width .2s}@media(max-width:550px){.btn{font-size:17px;padding:10px 14px}.toolbar{align-items:stretch}.stats{width:100%;margin:0}.hero{padding:25px 20px}.nav .btn{flex:1}}
+@media print{body{background:#fff}main{max-width:100%;padding:0}.hero{color:#000;background:none;box-shadow:none;border-bottom:2px solid #333}.toolbar,.nav,.answer-button,.foot{display:none!important}.card{box-shadow:none;break-inside:avoid;margin:12px 0}.answer{display:block!important}}
+</style>
+</head>
+<body><main>
+<header class="hero"><h1>🛡️ 手機防詐騙｜真假訊息大挑戰</h1><p class="subtitle">20則生活情境問答｜先看題目，按「答案」才顯示解答與原因。適合55歲以上學長姐課堂練習。</p><div class="progress"><div class="progress-bar" id="progress"></div></div></header>
+<div class="toolbar" role="group" aria-label="顯示模式"><button id="oneMode" class="btn primary active" type="button">逐題上課</button><button id="allMode" class="btn" type="button">20題總覽</button><button id="hideAll" class="btn" type="button">隱藏全部答案</button><span class="stats" id="counter" aria-live="polite"></span></div>
+<section id="list" aria-label="真假訊息題目"></section>
+<footer class="foot"><b>課堂提醒：</b>本網頁題目為教學模擬情境，不是查證過的真實訊息截圖。「✅ 相對可信」表示內容描述的是合理、安全的做法，並不代表可以直接相信任何署名官方的陌生來訊。看到不明連結、轉帳要求、驗證碼索取，請自行經官方管道確認。全頁可離線使用。</footer>
+</main>
+<script>
+const data=[
+["金錢與購物","【物流通知】您的包裹配送失敗，請立即點擊附上的網址，支付30元重新配送費。",false,"不明連結與臨時付款要求是警訊，可能誘導輸入信用卡資料。","自行開啟原購物平台或物流公司的官方APP查詢。"],
+["金錢與購物","【購物平台】您訂購的商品已出貨。請開啟原購物APP，在訂單紀錄中查看物流狀態。",true,"建議自行進入原購物APP核對，不要求點陌生網址或提供帳號密碼。","確認是否真的有該筆訂單；勿從陌生訊息點連結。"],
+["金錢與購物","【銀行通知】您的帳戶即將遭到凍結，請於10分鐘內點擊連結並輸入網銀帳號、密碼及驗證碼。",false,"限時施壓並索取密碼、驗證碼，是重大詐騙警訊。","不要點連結，改用銀行卡背面或官方網站的客服電話查證。"],
+["金錢與購物","【投資群組】老師帶單保證每天獲利3%，投入10萬元，一個月就能財富自由，名額只剩3位。",false,"保證高獲利、名額有限及催促入金，都是常見投資詐騙手法。","不匯款、不加入不明投資群組；可向165詢問。"],
+["金錢與購物","【電子發票提醒】您可以自行開啟財政部官方統一發票兌獎APP，查詢本期中獎情況。",true,"自行開啟已確認的官方APP查詢，是相對安全的做法。","不要相信陌生領獎網址或先支付領獎手續費的要求。"],
+["LINE與社群","【LINE好友】我是阿明，剛換新手機，舊帳號不能用了。急需借2萬元，現在匯給我，明天就還你。",false,"假冒親友並要求緊急匯款，是常見詐騙情境。","打原本熟悉的電話或當面確認，不用訊息提供的新號碼。"],
+["LINE與社群","【FB官方客服】您的Facebook帳號違規，將於30分鐘後永久停權。請提供帳號密碼完成申訴。",false,"陌生私訊冒充官方索取密碼與帳號資訊。","直接開啟Facebook官方APP查看帳號狀態。"],
+["LINE與社群","【LINE群組】明日上午9點在佛堂打掃，請大家攜帶抹布與手套。若時間有變動，以原群組公告為準。",true,"這類一般活動通知沒有陌生連結、匯款或驗證碼要求，但仍可核對發布者。","有疑問時詢問熟悉的組長或活動承辦人。"],
+["LINE與社群","【假客服】您的LINE帳號需要重新驗證，請把剛收到的6位數簡訊驗證碼傳給我，否則無法繼續使用。",false,"簡訊驗證碼可被利用來登入或接管帳號，不能提供他人。","不回覆驗證碼，透過官方APP檢查帳號安全。"],
+["LINE與社群","【FB贈品活動】免費送最新iPhone！前100名只需先匯199元運費，並提供身分證與銀行帳號即可領取。",false,"高價免費贈品結合先付款及索取敏感個資，風險極高。","不要付款或傳送證件、銀行資料。"],
+["健康與生活","【健康群組】每天早上空腹喝檸檬水，可以完全治好糖尿病，不必再吃醫師開的藥。請轉給親友！",false,"沒有可靠醫學證據支持治癒糖尿病的說法，擅自停藥會有危險。","不要轉傳或停藥，諮詢醫師及藥師。"],
+["健康與生活","【健康提醒】如果想知道自己最近的用藥紀錄，可以登入健保快易通APP的健康存摺查看。",true,"健康存摺是正當的查詢管道，但個人健康紀錄應保密。","從官方APP商店安裝，並自行登入查詢。"],
+["健康與生活","【養生秘方】把洋蔥放在房間四角，就能吸走所有病毒，完全預防流感，大家一定要照做。",false,"洋蔥能吸走病毒並完全預防流感，缺乏科學證據。","查閱衛生主管機關與可信醫療機構的防疫資訊。"],
+["健康與生活","【政府福利通知】凡滿55歲者，一律可領取5萬元現金補助，今天截止，請先繳500元手續費並填寫銀行資料。",false,"不明補助、緊迫期限、先付手續費與銀行資料索取都是警訊。","向政府主管機關官方管道確認，不要先付款。"],
+["健康與生活","【就醫提醒】下週回診前，請先整理自己的藥單、症狀及想詢問醫師的問題，方便看診。",true,"這是合理的回診準備建議，沒有誇大療效或索取個資。","自行整理藥品清單，和醫療人員討論。"],
+["AI與查證","【網路影片】影片中的知名醫師親口說：「這款保健品三天就能治好所有慢性病。」因此一定是真的。",false,"宣稱治好所有慢性病不可信；影片也可能遭冒用、剪輯或AI變造。","查醫師原始發言及可信醫療資訊，不因影片有真人面孔就相信。"],
+["AI與查證","【新聞查證提醒】看到重大消息時，先核對發布日期、官方來源，再與不同可靠媒體的報導比較。",true,"比對日期、原始來源及多方報導是良好的查證方法。","不要只看標題或轉傳次數就分享。"],
+["AI與查證","【社群照片】這張照片有上萬人分享，因此照片裡的災情和拍攝日期一定是真的。",false,"分享數不能證明照片時間、地點或真實性。","用圖片反向搜尋或查閱官方災情資訊與原始來源。"],
+["AI與查證","【旅遊提醒】出發前請自行到台鐵或高鐵官方APP查詢最新班次，避免只依賴朋友轉來的舊時刻表。",true,"出發前查閱官方班次，是合理且安全的做法。","確認乘車日期及班次，以最新官方公告為準。"],
+["AI與查證","【視訊來電】畫面上看起來是熟悉的朋友，對方要你立刻匯款，所以不必再打電話確認。",false,"AI深偽技術可能冒用人臉及聲音，看到熟悉的臉也不能省略查證。","透過原有熟悉電話或其他可信方式再確認，不直接匯款。"]
+];
+let mode='one', index=0; const open=new Set();const list=document.getElementById('list');
+function draw(){let indexes=mode==='all'?data.map((_,i)=>i):[index];list.replaceChildren();indexes.forEach(i=>{let [cat,q,good,why,action]=data[i];let card=document.createElement('article');card.className='card';const head=document.createElement('div');head.className='qhead';const num=document.createElement('span');num.textContent=`第 ${i+1} 題／20`;const category=document.createElement('span');category.className='category';category.textContent=cat;head.append(num,category);let question=document.createElement('div');question.className='question';question.textContent=q;let button=document.createElement('button');button.type='button';button.className='btn primary answer-button';button.textContent=open.has(i)?'收起答案':'答案';button.setAttribute('aria-expanded',String(open.has(i)));button.addEventListener('click',()=>{open.has(i)?open.delete(i):open.add(i);draw();});card.append(head,question,button);if(open.has(i)){let a=document.createElement('div');a.className='answer'+(good?'':' bad');let result=document.createElement('div');result.className='result';result.textContent=good?'✅ 答案：相對可信／正常做法':'❌ 答案：有問題／應提高警覺';let reason=document.createElement('p');reason.textContent='判斷原因：'+why;let step=document.createElement('p');step.className='action';step.textContent='正確處理：'+action;a.append(result,reason,step);card.append(a);}if(mode==='one'){let nav=document.createElement('div');nav.className='nav';let prev=document.createElement('button');prev.className='btn';prev.textContent='← 上一題';prev.disabled=i===0;prev.onclick=()=>{index--;draw();window.scrollTo({top:0,behavior:'smooth'});};let next=document.createElement('button');next.className='btn primary';next.textContent=i===19?'回到第1題':'下一題 →';next.onclick=()=>{index=(index+1)%20;draw();window.scrollTo({top:0,behavior:'smooth'});};nav.append(prev,next);card.append(nav);}list.append(card);});document.getElementById('counter').textContent=mode==='one'?`目前第 ${index+1}／20 題`:`共20題・已展開 ${open.size} 題`;document.getElementById('progress').style.width=(mode==='one'?((index+1)/20)*100:100)+'%';document.getElementById('oneMode').classList.toggle('active',mode==='one');document.getElementById('allMode').classList.toggle('active',mode==='all');}
+document.getElementById('oneMode').onclick=()=>{mode='one';draw()};document.getElementById('allMode').onclick=()=>{mode='all';draw()};document.getElementById('hideAll').onclick=()=>{open.clear();draw()};draw();
+</script></body></html>
