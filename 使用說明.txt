@@ -1,0 +1,16 @@
+手機班教材（繁體中文）
+
+上傳到 jackiewin/vegetarian-order-demo 儲存庫根目錄：
+movie-ticket.html 電影訂票模擬
+hospital-booking.html 醫院掛號模擬
+convenience-store.html 超商生活服務
+phone-safety.html 手機安全急救站
+hotel-booking.html 旅館訂房模擬
+life-challenge.html 手機生活20題
+teacher-guide.html 教師教學手冊
+mobile-class-menu.html 課程總入口（不取代原本 index.html）
+
+總入口網址：
+https://jackiewin.github.io/vegetarian-order-demo/mobile-class-menu.html
+
+模擬功能不會連接實際服務、不會真正預約或扣款。
